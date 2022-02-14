@@ -1,40 +1,77 @@
-//Tudo que estiver aqui é um comentário
 
-/*Tudo que 
-estiver aqui
-em varias linhas 
-é comentário
-*/
+/**                           Respostas dos exercícios de interpretação de código.                       
 
-/*
-console.log("Olá turma Silveira!");
+ Questão 1: 
+ Inicialmente o resultado é "10 10", mas como houve a modificação do valor atribuido a letra "b"
+  o resultado final é "10 5". 
 
-const nome = prompt("qual é o seu nome?");
-let idade = prompt('Qual é a sua idade?');
+ Questão 2:
+  Não houve uma atribuição ao valor da letra "c", por isso, automaticamente ocorre a divisão
+ * por isso o valor impresso é "10 10 10". 
 
-console.log(nome, idade); */
+  Questão 3:
+ *  Nome para as variáveis: horaTrabalhadaPorDia e valorRecebidoPorDia o objetivo é identificar
+ * o quanto vale a hora trabalhada. */
 
-/*
-const nome = "Muri";
-const sobreNome = "Sousa";
-let idade = 26;
-let souEstudante = true;
 
-let novaVariavel = null;
+  
+  //                           Respostas dos exercícios de escrita de códigos.         /
 
-console.log(nome, sobreNome, idade, souEstudante);
 
-console.log(typeof nome);
-console.log(typeof idade);
-console.log(typeof souEstudante);
-console.log(novaVariavel);
-*/
 
-//Alterar tipo de variavel
-/*
-const idadeTexto = prompt("Qual é a sua idade?");
-const idadeNumero = Number(idadeTexto);
+     // Questão 1.    /
 
-console.log(typeof idadeTexto, idadeTexto);
-console.log(typeof idadeNumero, idadeNumero);
-*/
+   
+
+     /** Criei variaveis "let" para nome e idade, como não houve atribuição de valores
+      * foi impresso "undefined", mas a pasta existe e a qualquer momento pode ser atribuídos
+      * valores. */
+
+
+     /** Foram impressos dois tipos de variáveis: String e Number.  */
+
+     const saudacao = "Oi";
+     const nome = "Jerusa";
+     const corpo = "você tem";
+     const idade = 33;
+     const fim = "anos";
+
+     console.log(saudacao,nome,corpo,idade,fim);
+
+
+     // Questão 2.     /
+
+     let bebeuAgua = prompt ("Você bebeu água?");
+     let almocou = prompt ("Você já almocou?");
+     let jogo = prompt ("Vai assistir o jogo amanhã?");
+
+     console.log("Você bebeu água?",bebeuAgua);
+     console.log("Você já almoçou?",almocou);
+     console.log("Vai assistir o jogo amanhã?",jogo);
+
+
+     // Questão 3.    /
+
+     // Incompleto /
+
+     let a = 10;
+     let b = 25;
+     let c = undefined;
+
+     c=a;
+     a=b;
+     b=c;
+
+     
+
+     
+  
+
+
+ 
+  
+  
+
+
+
+
