@@ -19,7 +19,6 @@ function checarIgualdade(a, b) {
 
 console.log(checarIgualdade(1,3));
 
-
 // c-)Faça uma função chamada "verificaSeEMaior"
 function verificaSeEMaior (a,b) {
     return `No comparador de igualdade ${a} > ${b} é ${a > b}`
@@ -34,13 +33,14 @@ console.log(verificaSeEMaior(321, 2156));
 // a-) 1==='1'= false
 // b-) 1=='1'= false
 // c-) 'a'==='b'= true
-// d-) 'b'>'a'= true
+// d-) 'b'>'a'= false
 // e-) 0!==null= true
 
 
 // CONDICIONAIS
 
 // Exercício 3------------------------------------------------------------------------------------
+
 
 function cadastro (nomeDoUsuario, anoDeNascimento, senhaDoUsuario,nacionalidade){
     let idadeDoUsuario = (2022-anoDeNascimento)
@@ -55,7 +55,7 @@ function cadastro (nomeDoUsuario, anoDeNascimento, senhaDoUsuario,nacionalidade)
     }
 
 
-    
+    //  Sua lógica aqui
 
 }
 console.log(cadastro());
@@ -73,9 +73,6 @@ console.log(login());
 // Exercício 5----------------------------------------------------------------------------------------------------
 
 const primeiraDose = () => {
-
-    //  Sua lógica aqui
-
 
 }
 console.log(primeiraDose())
