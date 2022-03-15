@@ -1,6 +1,6 @@
 
-// COMPARADORES
-// Exercício 1------------------------------------------------------------------------------------
+// // COMPARADORES
+// // Exercício 1------------------------------------------------------------------------------------
 
 // a-)Comparador de desigualdade a!==b 
 // Exemplo:
@@ -27,19 +27,19 @@ function verificaSeEMaior (a,b) {
 console.log(verificaSeEMaior(321, 2156));
 
 
-// Exercício 2------------------------------------------------------------------------------------
-//Escreva true or false para as comparações abaixo:
-// exemplo 1>2 = false
-// a-) 1==='1'= false
-// b-) 1=='1'= false
-// c-) 'a'==='b'= true
-// d-) 'b'>'a'= false
-// e-) 0!==null= true
+// // Exercício 2------------------------------------------------------------------------------------
+// //Escreva true or false para as comparações abaixo:
+// // exemplo 1>2 = false
+// // a-) 1==='1'= false
+// // b-) 1=='1'= true
+// // c-) 'a'==='b'= true
+// // d-) 'b'>'a'= false
+// // e-) 0!==null= true
 
 
-// CONDICIONAIS
+// // CONDICIONAIS
 
-// Exercício 3------------------------------------------------------------------------------------
+// // Exercício 3------------------------------------------------------------------------------------
 
 
 function cadastro (nomeDoUsuario, anoDeNascimento, senhaDoUsuario,nacionalidade){
@@ -55,27 +55,62 @@ function cadastro (nomeDoUsuario, anoDeNascimento, senhaDoUsuario,nacionalidade)
     }
 
 
-    //  Sua lógica aqui
+    
 
 }
-console.log(cadastro());
+console.log(cadastro("Jerusa", 1988, "******", "Brasileira" ));
 
-// Exercício 4-----------------------------------------------------------------------------------------------
+// // Exercício 4-----------------------------------------------------------------------------------------------
 
-const login = () => {
+const login = ()=>{
+
+    let loginUsuario = prompt ("Digite sua senha")
     const login = "labenu"
-    //  Sua lógica aqui
+    
+    if (loginUsuario === login){
+        return `Usuário Logado.`
+    }
 
+    else {
+        return `Senha inválida.`
+
+    }
 }
 
-console.log(login());
+console.log(login(`Usuário logado` || `Senha inválida`));
 
 // Exercício 5----------------------------------------------------------------------------------------------------
 
-const primeiraDose = () => {
+ function primeiraDose(){
+
+    const nomeDoUsuario = prompt("Qual é o seu nome?");
+    const nomeDaVacina = prompt("Qual é o nome da vacina?");
+
+    let tempo = ""
+    let data = ""
+  
+
+    switch(nomeDaVacina){
+      case "Coronavac":
+      tempo = 28
+      break
+      case "Astrazeneca":
+          tempo = 90
+          break
+      case "Pfizer":
+         tempo = 90
+         break
+      default:
+         return `Vacina inválida`
+
+        
+
+    }
 
 }
-console.log(primeiraDose())
+
+console.log(primeiraDose(`Olá ${nomeDoUsuario}! A próxima dose da ${nomeDaVacina} é daqui a ${tempo} dias. Compareça no posto na data ${dataFormatada}`))
+
 
 
 // LOOP+CONDICIONAL
@@ -88,9 +123,12 @@ const segundaDose = (nomeDoUsuario) => {
         { nome: "Barbara", imunizacao: "incompleta" },
         { nome: "Carlos", imunizacao: "incompleta" }
     ]
-
-    //  Sua lógica aqui
-
+    for(let pessoa of usuarios){
+        if(pessoa.nome === nomeDoUsuario && pessoa.imunizacao ==="incompleta")
+         pessoa.imunizacao = "completa"
+    }
+    return usuarios
+    
 
 }
 console.log(segundaDose("Barbara"));
@@ -104,7 +142,16 @@ const avisoAosAtrasados = () => {
         { nome: "Carlos", imunizacao: "incompleta" }
     ]
 
-    //  Sua lógica aqui
+
+     let nomePessoa = prompt("Digite seu nome")
+    for(let pessoa of usuarios){
+        if(nomePessoa === pessoa.nome && pessoa.imunizacao ==="incompleta"){
+        return `Você precisa voltar ao posto para a segunda dose`
+    }
+    else {
+        return `Parabéns você está completamente vacinado(a).`
+    }
+}
 
 }
 console.log(avisoAosAtrasados());
@@ -141,7 +188,22 @@ const usuarios = [
 ]
 
 const cadastroDesafio = () => {
-    //  Sua lógica aqui
+    let nomeDoUsuario = prompt ("Digite seu nome")
+    let anoDeNascimento = prompt("Digite seu ano de nascimento")
+    let senhaDoUsuario = prompt("Digite sua senha")
+    let nacionalidade = prompt("Digite sua nacionalidade")
+    let novaPessoa ={}
+    if (anoDeNascimento < 2004 && senhaDoUsuario.length >= 6 && nacionalidade === "Brasileiro"){
+
+            novaPessoa.nome = nomeDoUsuario,
+            novaPessoa.ano = anoDeNascimento,
+            novaPessoa.nacionalidade = nacionalidade,
+            novaPessoa.senha = senhaDoUsuario
+        
+    }
+    
+    usuarios.push(novaPessoa)
+    return usuarios
 }
 console.log(cadastroDesafio());
 
