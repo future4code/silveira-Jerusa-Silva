@@ -1,6 +1,6 @@
 
-// // COMPARADORES
-// // Exercício 1------------------------------------------------------------------------------------
+// // // COMPARADORES
+// // // Exercício 1------------------------------------------------------------------------------------
 
 // a-)Comparador de desigualdade a!==b 
 // Exemplo:
@@ -27,19 +27,19 @@ function verificaSeEMaior (a,b) {
 console.log(verificaSeEMaior(321, 2156));
 
 
-// // Exercício 2------------------------------------------------------------------------------------
-// //Escreva true or false para as comparações abaixo:
-// // exemplo 1>2 = false
-// // a-) 1==='1'= false
-// // b-) 1=='1'= true
-// // c-) 'a'==='b'= true
-// // d-) 'b'>'a'= false
-// // e-) 0!==null= true
+// // // Exercício 2------------------------------------------------------------------------------------
+// // //Escreva true or false para as comparações abaixo:
+// // // exemplo 1>2 = false
+// // // a-) 1==='1'= false
+// // // b-) 1=='1'= true
+// // // c-) 'a'==='b'= true
+// // // d-) 'b'>'a'= false
+// // // e-) 0!==null= true
 
 
-// // CONDICIONAIS
+// // // CONDICIONAIS
 
-// // Exercício 3------------------------------------------------------------------------------------
+// // // Exercício 3------------------------------------------------------------------------------------
 
 
 function cadastro (nomeDoUsuario, anoDeNascimento, senhaDoUsuario,nacionalidade){
@@ -60,7 +60,7 @@ function cadastro (nomeDoUsuario, anoDeNascimento, senhaDoUsuario,nacionalidade)
 }
 console.log(cadastro("Jerusa", 1988, "******", "Brasileira" ));
 
-// // Exercício 4-----------------------------------------------------------------------------------------------
+// // // Exercício 4-----------------------------------------------------------------------------------------------
 
 const login = ()=>{
 
@@ -79,7 +79,7 @@ const login = ()=>{
 
 console.log(login(`Usuário logado` || `Senha inválida`));
 
-// Exercício 5----------------------------------------------------------------------------------------------------
+// // Exercício 5----------------------------------------------------------------------------------------------------
 
  function primeiraDose(){
 
@@ -113,9 +113,9 @@ console.log(primeiraDose(`Olá ${nomeDoUsuario}! A próxima dose da ${nomeDaVaci
 
 
 
-// LOOP+CONDICIONAL
+// // LOOP+CONDICIONAL
 
-// Exercício 6 -------------------------------------------------------------------------------------
+// // Exercício 6 -------------------------------------------------------------------------------------
 
 const segundaDose = (nomeDoUsuario) => {
     const usuarios = [
@@ -163,7 +163,7 @@ const usuarios = [
     {
         nome: "Artur",
         ano: 2000,
-        nacionalidae: "brasileiro",
+        nacionalidade: "brasileiro",
         senha: "123456",
         vacina: "pfizer",
         imunizacao: "incompleta"
@@ -171,7 +171,7 @@ const usuarios = [
     {
         nome: "Bárbara",
         ano: 1984,
-        nacionalidae: "brasileira",
+        nacionalidade: "brasileira",
         senha: "labenu",
         vacina: "astrazenica",
         imunizacao: "completa"
@@ -179,7 +179,7 @@ const usuarios = [
     {
         nome: "Carlos",
         ano: 2000,
-        nacionalidae: "brasileiro",
+        nacionalidade: "brasileiro",
         senha: "123456",
         vacina: "coronavac",
         imunizacao: "incompleta"
@@ -208,20 +208,38 @@ const cadastroDesafio = () => {
 console.log(cadastroDesafio());
 
 const loginDesafio = () => {
-    //  Sua lógica aqui
+    
+    const senhaDigitada = prompt("Digite sua senha")
+    for (let pessoa of usuarios){
+    if(senhaDigitada === pessoa.senha){
+        console.log("Usuário logado.")
+    }else{
+         console.log("Senha inválida.")
+    
+    }    
+    }
+     
 }
 console.log(loginDesafio());
 
 const primeiraDoseDesafio = () => {
-//  Sua lógica aqui
+     
 }
 console.log(primeiraDoseDesafio())
+
+
 const segundaDoseDesafio = (nomeDoUsuario) => {
-    //  Sua lógica aqui
+    
+    for(let pessoa of usuarios){
+    if(nomedoUsuario === pessoanome){
+        pessoa.imunizacao = "completa"
+    }    
+    }
+    return usuarios
 }
-console.log(segundaDoseDesafio("ALGUM NOME AQUI"));
+console.log(segundaDoseDesafio("Carlos"));
 
 const avisoAosAtrasadosDesafio = () => {
-    //  Sua lógica aqui
+    
 }
-console.log(avisoAosAtrasadosDesafio());
+console.log(avisoAosAtrasadosDesafio());  
