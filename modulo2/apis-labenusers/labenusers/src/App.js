@@ -7,7 +7,11 @@ const MainContainer = styled.div`
 display: flex;
 flex-direction: column;
 justify-content: center;
-align-items: flex-start;
+align-items: center;
+background-color: #ffee99;
+border-width: medium;
+border-style: dotted;
+border-color: #fffae5;
 ` 
 
 
