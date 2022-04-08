@@ -3,25 +3,35 @@ import styled from 'styled-components';
 
 const CardDiv = styled.div`
     display: flex;
-    width: 25vw;
-    margin: 10px 0 10px 40px;
-    justify-content: space-between;
-    align-items: center;    
+    width: 80vw;
+    margin: 20px 5 10px 60px;
+    justify-content: center;
+    align-items: center;  
+    border-style: outset;
+    font-family: 'Times New Roman', Times, serif;
+    
+    
+    
 `
 const BackgroundCard = styled.div`
-    background-color: rosybrown;
+    background-color: white;
     display: flex;
-    width: 50vw;
-    height: 8vh;
-    margin: 10px 0 10px 40px;
+    width: 100vw;
+    height: 20vh;
+    margin: 5px 0 3px 15px;
     justify-content: center;
-    align-items: center;    
+    align-items: center; 
+    
+      
 `
 
 const Botao = styled.button`
-    background-color: #abc4ff;
-    border-radius: 8px;
+    background-color: #A2CD5A;
+    margin: 0 2px;
+    
+    
 `
+
 
 
 const CardPlaylist = (props) => {
