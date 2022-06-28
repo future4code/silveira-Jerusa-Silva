@@ -1,0 +1,16 @@
+
+GET http://localhost:3003/user/:email/
+
+###
+
+GET  http://localhost:3003/user/token
+
+###
+POST http://localhost:3003/user/signup
+
+{
+"email": "teste@teste.teste",
+"password": "123456",
+"name": "teste",
+"role": "NORMAL"
+}
