@@ -1,7 +1,7 @@
-import connection from "./connection";
+import connection from "./connection"
 
 export const getUserByEmail = async (email: string) => {
-  const response = await connection("cookenu_user").where({ email: email });
+  const response = await connection("cookenu_user").where({ email: email })
 
-  return response[0];
-};
+  return response[0]
+}

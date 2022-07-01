@@ -1,4 +1,5 @@
-import { hashSync, genSaltSync, compareSync } from "bcryptjs";
+import { hashSync, genSaltSync, compareSync } from "bcryptjs"
+import * as jwt from "jsonwebtoken"
 
 export class User {
   constructor(
@@ -19,17 +20,9 @@ export class Recipes {
   ) {}
 }
 
-export class FollowSystem {
-  constructor(
-    protected id: string,
-    protected user_id: string,
-    protected user_follow: string
-  ){}
-}
-
 export type Authentication = {
   id: string;
-};
+}
 
 export class HashManager {
   generateHash = (plainText: string): string => {
@@ -38,12 +31,34 @@ export class HashManager {
     const cypherText: string = hashSync(plainText, salt);
 
     return cypherText;
-  };
+  }
 
   compareHash = (plainText: string, cypherText: string): boolean => {
     return compareSync(plainText, cypherText);
-  };
+  }
 }
 
+export const GenerateToken = (id: Authentication): string => {
+  return jwt.sign(
+    {id},
+    "tes123te",
+    { expiresIn: "1h" }
+  )
+}
 
+export const GetTokenData = (token: string): Authentication | null => {
+  try {
+    return jwt.verify(token, "tes123te") as Authentication 
 
+  } catch(error:any) {
+    return null 
+  }
+}
+
+const date = new Date()
+
+const year = date.getFullYear()
+const mounth = date.getMonth()
+const day = date.getDay()
+
+export const today = `${year}/${mounth}/${day}`

@@ -1,4 +1,4 @@
-import knex from "knex";
+import knex from "knex"
 
 const connection = knex({
   client: "mysql",
