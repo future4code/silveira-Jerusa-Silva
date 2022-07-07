@@ -1,55 +1,30 @@
-import { BaseDatabase } from "./BaseDatabase";
+import { BaseDatabase } from "./BaseDatabase"
 
-class Migrations extends BaseDatabase {
-  public createTables = async (): Promise<void> => {
-    try {
-      await this.connection.raw(`
-        CREATE TABLE IF NOT EXISTS User_Labook(
-            id VARCHAR(255) PRIMARY KEY,
-            name VARCHAR(255) NOT NULL,
-            email VARCHAR(255) NOT NULL UNIQUE,
-            password VARCHAR(255) NOT NULL
-        );
+export class Migrations extends BaseDatabase {
+    
+    migrations = async (
         
-        CREATE TABLE IF NOT EXISTS Labook_followers (
-            followed_id VARCHAR(255) NOT NULL,
-            follower_id VARCHAR(255) NOT NULL,
-            FOREIGN KEY (followed_id) REFERENCES User_Labook(id),
-            FOREIGN KEY (follower_id) REFERENCES User_Labook(id)
-        );
-        
-        CREATE TABLE IF NOT EXISTS Labook_posts (
-            id VARCHAR(255) NOT NULL,
-            title VARCHAR(255) NOT NULL,
-            body mediumtext NOT NULL,
-            image_url VARCHAR(255),
-            post_type VARCHAR(64) NOT NULL,
-            created_at DATETIME NOT NULL,
-            user_id VARCHAR(255) NOT NULL
-        );
-        
-        CREATE TABLE IF NOT EXISTS Labook_posts_likes (
-            id VARCHAR(255) NOT NULL,
-            user_id VARCHAR(255) NOT NULL,
-            FOREIGN KEY (user_id) REFERENCES User_Labook(id)
-        );
-        
-        CREATE TABLE IF NOT EXISTS Labook_posts_comments (
-            id VARCHAR(255) NOT NULL,
-            post_id VARCHAR(255) NOT NULL,
-            created_at DATETIME NOT NULL,
-            user_id VARCHAR(255) NOT NULL,
-            comment mediumtext NOT NULL
-        )
-        `);
-
-      console.log("Tabelas criadas com sucesso");
-      await this.connection.destroy();
-    } catch (error: any) {
-      console.log(error.sqlMessage || error.message);
-      await this.connection.destroy();
-    }
-  };
+    ) => {
+        await this.connection
+    .raw(`
+       CREATE TABLE IF NOT EXISTS labook_users(
+          id VARCHAR(255) PRIMARY KEY,
+          name VARCHAR(255) NOT NULL,
+          email VARCHAR(255) UNIQUE NOT NULL,
+          password VARCHAR(255) NOT NULL
+       );
+ 
+       CREATE TABLE IF NOT EXISTS labook_posts(
+          id VARCHAR(255) PRIMARY KEY,
+          photo VARCHAR(255) NOT NULL,
+          description VARCHAR(255) NOT NULL,
+          type ENUM("normal","event") DEFAULT "normal",
+          created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+          author_id VARCHAR(255),
+          FOREIGN KEY (author_id) REFERENCES labook_users (id)
+       )
+    `)
+    .then(console.log)
+    .catch(console.log)
 }
-
-new Migrations().createTables();
+}

@@ -1,16 +1,13 @@
-export enum POST_TYPE {
-    NORMAL = 'NORMAL',
-    EVENT = 'EVENT',
-}
-
-export default class Post{
-    constructor(
-        private id:string,
-        private title:string,
-        private body:string,
-        private post_type:POST_TYPE,
-        private image_url:string,
-        private created_at:Date,
-        private user_id:string
-    ){}
-}
+export enum POST_TYPES {
+    NORMAL = "normal",
+    EVENT = "event"
+ }
+ 
+export type post = {
+    id: string,
+    photo: string,
+    description: string,
+    type: POST_TYPES,
+    created_at: Date,
+    author_id: string
+ }

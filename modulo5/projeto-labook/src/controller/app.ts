@@ -1,13 +1,10 @@
-import express, { Express } from 'express'
-import cors from 'cors'
+import cors from "cors"
+import express from "express"
 
-const app: Express = express()
-
+export const app = express()
 app.use(express.json())
 app.use(cors())
 
-app.listen(process.env.PORT || 3003, () => {
-    console.log("Server running on port", process.env.PORT || 3003)
+app.listen(3003, () => {
+   console.log('Servidor rodando na porta 3003')
 })
-
-export default app

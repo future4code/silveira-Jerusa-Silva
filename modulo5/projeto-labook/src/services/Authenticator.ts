@@ -2,24 +2,24 @@ import * as jwt from "jsonwebtoken"
 import { authenticationData } from "../types/authData"
 
 export class Authenticator {
-   generateToken = (
+    generateToken(
       payload: authenticationData
-   ): string => {
+   ): string {
       return jwt.sign(
          payload,
-         process.env.JWT_KEY as string,
+         `${process.env.JWT_KEY}` as string,
          {
-            expiresIn: process.env.JWT_EXPIRES_IN
+            expiresIn: "30min"
          }
       )
    }
 
-   getTokenData = (
+   getTokenData(
       token: string
-   ): authenticationData => {
+   ): authenticationData {
       return jwt.verify(
          token,
-         process.env.JWT_KEY as string
+         `${process.env.JWT_KEY}` as string
       ) as authenticationData
    }
 }

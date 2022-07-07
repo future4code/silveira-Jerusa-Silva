@@ -1,8 +1,10 @@
-import { POST_TYPE } from "../model/Post"
+import { POST_TYPES } from "../model/Post"
+
 
 export type PostInputDTO = {
-    title: string
-    body: string
-    image_url: string
-    post_type: POST_TYPE
+    photo: string,
+    description: string,
+    type: POST_TYPES,
+    created_at: Date,
+    author_id: string
 }
